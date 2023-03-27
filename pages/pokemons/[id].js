@@ -2,6 +2,9 @@ import Layout from '@/components/Layout'
 import OtherLinks from '@/components/OtherLinks'
 import Image from 'next/image'
 import React from 'react'
+import { FaGithub, FaLink } from 'react-icons/fa'
+import { AiFillHome } from 'react-icons/ai'
+import Link from 'next/link'
 
 const Details = ({ pokemon }) => {
   const type = pokemon.type[0]
@@ -31,6 +34,11 @@ const Details = ({ pokemon }) => {
     <>
       <OtherLinks />
       <Layout title={pokemon.name.english} type={type}>
+        <div className="flex lg:hidden text-white w-full items-center justify-center pt-7">
+          <Link href="/">
+            <AiFillHome size={60} />
+          </Link>
+        </div>
         <div className="min-h-screen flex flex-col items-center justify-center lg:flex-row w-full">
           <div className="relative flex w-full lg:w-[40%] justify-center z-10 pl-10 ">
             <div className="absolute text-[123px] mt-16 xl:mt-0 xl:text-[234px] z-10 text-gray-600 text-opacity-20 leading-none font-black">
@@ -47,7 +55,9 @@ const Details = ({ pokemon }) => {
           <div className="w-full lg:w-1/2 mt-0 md:mt-5">
             <div id="nameAndHeightWeight" className="flex flex-col">
               <div className="flex flex-row">
-                <div className="text-5xl sm:text-7xl md:text-9xl mx-2 flex items-center justify-center">{emoji[type.toLowerCase()]}</div>
+                <div className="text-5xl sm:text-7xl md:text-9xl mx-2 flex items-center justify-center">
+                  {emoji[type.toLowerCase()]}
+                </div>
                 <div className="flex flex-col mx-3">
                   <h5 className="text-base font-bold text-gray-200">
                     {type.toUpperCase()} {' | '} {type2?.toUpperCase()}
@@ -124,7 +134,10 @@ const Details = ({ pokemon }) => {
                           break
                       }
                       return (
-                        <div key={index} className="w-full px-1 lg:px-6 flex flex-col">
+                        <div
+                          key={index}
+                          className="w-full px-1 lg:px-6 flex flex-col"
+                        >
                           <div className="flex justify-between">
                             <span>{stat.toUpperCase()}</span>
                             <span>{pokemon.base[stat]}</span>
@@ -146,6 +159,23 @@ const Details = ({ pokemon }) => {
                     })}
               </div>
             </div>
+          </div>
+        </div>
+        <div className="flex flex-col lg:hidden text-white w-full items-center justify-center pb-7">
+          <div className="flex">
+            <Link href="https://github.com/reezayn/rijan-pokedex-v1">
+              <div className="mx-7">
+                <FaGithub size={60} />
+              </div>
+            </Link>
+            <Link href="https://rijanshrestha.com.np/">
+              <div className="mx-7">
+                <FaLink size={50} />
+              </div>
+            </Link>
+          </div>
+          <div className="bg-white text-gray-400 text-sm my-7 p-5 rounded-2xl font-extrabold">
+            Made by Rijan Shrestha | 2023 March
           </div>
         </div>
       </Layout>

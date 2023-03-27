@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    html{
-        @apply bg-gradient-to-r from-[#de6161] to-[#2657eb]
-    }
+@layer base {
+  html {
+    @apply bg-gradient-to-r from-[#de6161] to-[#2657eb];
+  }
+  html::-webkit-scrollbar {
+    display: none;
+  }
 }

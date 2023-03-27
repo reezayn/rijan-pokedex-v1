@@ -66,7 +66,7 @@ export default function Home({ pokeData, styles }) {
           <input
             type="text"
             placeholder="Search"
-            className="mx-8 w-full sm:w-3/4 bg-gray-100 px-6 py-2 rounded border border-poke-yellow outline-none"
+            className="mx-8 w-full sm:w-3/4 bg-gray-100 px-6 py-2 rounded border border-ice outline-none"
             onChange={handleInputChange}
             value={input}
           />
