@@ -61,8 +61,9 @@ export default function Home({ pokeData, styles }) {
     <>
       <Navbar />
       <OtherLinks />
+      <div className='flex items-center justify-center min-h-screen w-full'>
       <Layout title={'Pokedex - By Rijan'}>
-        <div className="flex justify-center pt-12">
+        <div className="flex justify-center pt-12 items-center">
           <input
             type="text"
             placeholder="Search"
@@ -166,6 +167,8 @@ export default function Home({ pokeData, styles }) {
           </div>
         </div>
       </Layout>
+      </div>
+      
     </>
   )
 }
